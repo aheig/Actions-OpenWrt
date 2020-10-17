@@ -57,7 +57,7 @@ https://tmate.io/t/Y26QeagDtsPXp2mT6me5cnMRd
 - [Cowtransfer](https://cowtransfer.com)
 - [WeTransfer](https://wetransfer.com/)
 - [Mikubill/transfer](https://github.com/Mikubill/transfer)
--等大神们
+- 等大神们
 
 ## 许可
 
