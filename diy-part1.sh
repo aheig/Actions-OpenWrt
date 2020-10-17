@@ -1,3 +1,4 @@
+  
 #!/bin/bash
 #
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
@@ -13,5 +14,12 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+# Delete a feed source
+#sed -i '2d' feeds.conf.default
+#sed -i '$d' feeds.conf.default
+
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+#sed -i '$a src-git luci https://github.com/Lienol/openwrt-luci' feeds.conf.default
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+sed -i '$a src-git litte https://github.com/kenzok8/litte package/litte' feeds.conf.default
