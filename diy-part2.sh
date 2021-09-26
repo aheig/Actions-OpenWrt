@@ -33,6 +33,7 @@ sed -i 's/192.168.1.1/10.255.255.99/g' package/base-files/files/bin/config_gener
 
 # 设置密码为"空"（安装固件时无需密码登陆，然后自己修改想要的密码）
 #sed -i 's/McPtUJaL$M47t/nUbjYrWraS5NgvOx0:18552/V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0/g' package/lean/default-settings/files/zzz-default-settings
+sed -i '1c root:$1$McPtUJaL$M47t/nUbjYrWraS5NgvOx0:18552:0:99999:7:::' package/base-files/files/etc/shadow
 
 # 修改插件名字（修改名字后不知道会不会对插件功能有影响，自己多测试）
 # sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
