@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: LEDE+SSR++
+name: LEDE+Byps+pswl+ifit+SSR++
 
 
 on:
@@ -24,7 +24,7 @@ env:
   REPO_URL: https://github.com/CoolSnowWolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 55R.config
+  CONFIG_FILE: Byps+pswl+ifit+ssr++.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
