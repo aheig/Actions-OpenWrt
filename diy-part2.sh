@@ -41,7 +41,7 @@ sed -i 's/22/2333/g' package/network/services/dropbear/files/dropbear.config
 sed -i "/2333/a\        option Interface 'lan'" package/network/services/dropbear/files/dropbear.config
 
 # 更改内核版本
-sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=6.1/g' target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=6.1/g' target/linux/x86/Makefile
 sed -i 's/KERNEL_TESTING_PATCHVER:=5.15/KERNEL_TESTING_PATCHVER:=6.1/g' target/linux/x86/Makefile
 
 # 修改插件名字（修改名字后不知道会不会对插件功能有影响，自己多测试）
