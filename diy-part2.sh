@@ -17,7 +17,7 @@
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=5.14/g' target/linux/x86/Makefile
 
 # 修改openwrt登陆地址,把下面的192.168.6.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/10.255.255.99/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把OpenWrt-1.0修改你喜欢的就行（不能纯数字或者使用中文）
 # sed -i '/uci commit system/i\uci set system.@system[0].hostname='OpenWrt-1.0'' package/lean/default-settings/files/zzz-default-settings
@@ -33,10 +33,16 @@ sed -i 's/192.168.1.1/10.255.255.99/g' package/base-files/files/bin/config_gener
 sed -i '1c root:$1$McPtUJaL$M47t/nUbjYrWraS5NgvOx0:18552:0:99999:7:::' package/base-files/files/etc/shadow
 
 # 关闭DHCP
-sed -i 's/start/ignore/' package/network/services/dnsmasq/files/dhcp.conf
-sed -i 's/100/1/' package/network/services/dnsmasq/files/dhcp.conf
-sed -i '28d' package/network/services/dnsmasq/files/dhcp.conf
-sed -i '28d' package/network/services/dnsmasq/files/dhcp.conf
+wget -O package/network/services/dnsmasq/files/dhcp.conf https://raw.githubusercontent.com/aheig/bak/master/x86-64/dhcp.office
+sed -i "s/ip6assign='60'/ip6assign='0'/g" package/base-files/files/bin/config_generate
+
+# 更改ssh端口为2333
+sed -i 's/22/2333/g' package/network/services/dropbear/files/dropbear.config
+sed -i "/2333/a\        option Interface 'lan'" package/network/services/dropbear/files/dropbear.config
+
+# 更改内核版本
+sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=6.1/g' target/linux/x86/Makefile
+sed -i 's/KERNEL_TESTING_PATCHVER:=5.15/KERNEL_TESTING_PATCHVER:=6.1/g' target/linux/x86/Makefile
 
 # 修改插件名字（修改名字后不知道会不会对插件功能有影响，自己多测试）
 # sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
