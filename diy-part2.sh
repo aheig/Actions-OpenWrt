@@ -12,6 +12,9 @@
 
 # Custom configuration
 
+# 更改主机名
+sed -i "s/hostname='.*'/hostname='OVO'/g" package/base-files/files/bin/config_generate
+
 # 修改内核5.14
 # sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=5.14/g' target/linux/x86/Makefile
 # sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=5.14/g' target/linux/x86/Makefile
