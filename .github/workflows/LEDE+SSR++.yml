@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: LEDE+Byps+pswl+ifit+SSR++
+name: LEDE+SSR++
 
 
 on:
