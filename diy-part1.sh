@@ -12,7 +12,7 @@
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-
+sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 #git clone https://github.com/tianiue/luci-packages.git package/luci-packages
@@ -35,4 +35,4 @@
 #git clone https://github.com/Hyy2001X/luci-app-autoupdate.git package/luci-app-autoupdate
 #git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app-godproxy
 #git clone https://github.com/kenzok8/luci-theme-ifit.git package/luci-theme-ifit
-git clone https://github.com/kenzok8/small.git package/small
+#git clone https://github.com/kenzok8/small.git package/small
