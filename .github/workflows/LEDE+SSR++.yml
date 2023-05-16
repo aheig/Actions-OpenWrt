@@ -92,8 +92,8 @@ jobs:
     - name: Download package
       id: package
       run: |
-        make defconfig
         cd openwrt
+        make defconfig
         rm -rf ./tmp
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         make download -j8
