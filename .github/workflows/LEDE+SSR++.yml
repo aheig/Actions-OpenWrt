@@ -71,7 +71,6 @@ jobs:
         
     - name: Load custom configuration
       run: |
-        make defconfig
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         mv lede-rrs.config openwrt/.config
