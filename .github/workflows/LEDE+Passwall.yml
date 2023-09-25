@@ -64,7 +64,7 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        wget https://github.com/aheig/bak/blob/master/x86-64/Lede%2BPasswall-IPv6/feeds.conf.default -O openwrt/feeds.conf.default
+        wget https://github.com/aheig/bak/blob/master/x86-64/Lede-Passwall/feeds.conf.default -O openwrt/feeds.conf.default
 
     - name: Load custom configuration
       run: |
@@ -89,7 +89,7 @@ jobs:
     - name: Download package
       id: package
       run: |
-        wget https://github.com/aheig/bak/blob/master/x86-64/Lede%2BPasswall-IPv6/lede%2Bpasswall-IPv6.config -O openwrt/.config
+        wget https://github.com/aheig/bak/blob/master/x86-64/Lede-Passwall/lede%2Bpasswall-IPv6.config -O openwrt/.config
         cd openwrt
         rm -rf ./tmp
         make defconfig
