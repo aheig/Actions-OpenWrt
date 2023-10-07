@@ -34,7 +34,7 @@ sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 # 设置密码为"空"（安装固件时无需密码登陆，然后自己修改想要的密码）
 #sed -i 's/McPtUJaL$M47t/nUbjYrWraS5NgvOx0:18552/V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0/g' package/lean/default-settings/files/zzz-default-settings
 sed -i '1c root:$1$McPtUJaL$M47t/nUbjYrWraS5NgvOx0:18552:0:99999:7:::' package/base-files/files/etc/shadow
-
+sed -i '/99999/d' package/lean/default-settings/files/zzz-default-settings
 # 关闭DHCP
 wget -O package/network/services/dnsmasq/files/dhcp.conf https://raw.githubusercontent.com/aheig/bak/master/x86-64/dhcp.office
 sed -i "s/ip6assign='60'/ip6assign='0'/g" package/base-files/files/bin/config_generate
